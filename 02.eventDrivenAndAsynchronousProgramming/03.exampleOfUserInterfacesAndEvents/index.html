@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>title</title>
+    <meta charset="UTF-8">
+    <script>
+      document.addEventListener('DOMContentLoaded', function(event) {
+        var addButton = document.getElementById('add');
+        var output = document.getElementById('output');
+        var count = 0;
+
+        addButton.addEventListener('click', function(event) {
+          count += 1;
+          output.textContent = String(count);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <p>
+      <span id="output">0</span>
+      <button id="add">Add One</button>
+    </p>
+  </body>
+</html>

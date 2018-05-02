@@ -1,0 +1,22 @@
+.x {
+    position: absolute;
+    transform: rotate(45deg);
+    top: 20px;
+    left: 20px;
+}
+.x .horizontal,
+.x .vertical {
+    position: absolute;
+    background: red;
+}
+.x .horizontal {
+    width: 45px;
+    height: 5px;
+    left: -20px;
+}
+.x .vertical {
+    width: 5px;
+    height: 45px;
+    left: 0;
+    top: -20px;
+}

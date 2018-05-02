@@ -1,0 +1,18 @@
+.example, ul, li {
+    padding: 15px;
+}
+
+.example {
+    border: 2px dotted blue;
+    width: 400px;
+}
+ul {
+    border: 2px dotted red;
+}
+li {
+    border: 2px dotted magenta;
+}
+.example span {
+    border: 2px dotted green;
+    padding: 5px;
+}

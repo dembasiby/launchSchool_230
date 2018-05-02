@@ -1,0 +1,46 @@
+html {
+    background-color: #00d3b6;
+    font-style: monospace;
+}
+main {
+    background-color: #fff;
+    box-sizing: border-box;
+    color: #009f7e;
+    margin: 50px auto 0 auto;
+    max-width: 450px;
+    padding: 40px 20px;
+
+}
+dd input[type='text'],
+dd input[type='number'] {
+    box-sizing: border-box;
+    font-size: 24px;
+    height: 50px;
+    padding: 10px 5px;
+}
+dd input[type='text'] {
+    border: 5px solid #b7e2b7;
+    width: 410px;
+}
+dd input[type='number'] {
+    width: 80px;
+}
+input[type='submit'] {
+    background-color: #a3001f;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    height: 58px;
+    width: 410px;
+}
+fieldset {
+    border-style: none;
+    padding: 0;
+}
+dd {
+    margin: 10px 0 20px 0;
+}
+#groceries {
+    color: #CC1822;
+    text-align: center;
+}

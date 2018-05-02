@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Just testing debugging with node in VS Code",
+  "main": "test.js",
+  "scripts": {
+    "start": "run-script-os",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Demba Siby",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "run-script-os": "^1.0.3"
+  }
+}
