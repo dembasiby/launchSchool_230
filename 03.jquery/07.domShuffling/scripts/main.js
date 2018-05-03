@@ -1,10 +1,10 @@
 $(function () {
-  var $main = $("main");
   var $header = $("body > header");
-  $("header").insertBefore($main);
-  $("main h1").insertBefore("nav");
-  $("header").first().insertBefore("main article p");
-  $("figure").last().insertBefore($("figure").first());
-  $("figcaption").last().appendTo($("figure").first());
-  $("figcaption").first().appendTo($("figure").last());
+  $header.prependTo("body");
+  $("main > h1").prependTo($header);
+  var chinImage = $("main img").eq(1).remove();
+  var babyImage = $("main img").eq(0);
+  babyImage.prependTo($("figure:nth-of-type(2)"));
+  chinImage.prependTo($("figure:first-of-type"));
+  $("figure").appendTo("article");
 });
