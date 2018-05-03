@@ -1,5 +1,6 @@
 $(function () {
   var $main = $("main");
+  var $header = $("body > header");
   $("header").insertBefore($main);
   $("main h1").insertBefore("nav");
   $("header").first().insertBefore("main article p");

@@ -12,10 +12,11 @@
   "author": "Demba Siby",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.24.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
     "run-script-os": "^1.0.2"
-  }
+  },
+  "dependencies": {}
 }
