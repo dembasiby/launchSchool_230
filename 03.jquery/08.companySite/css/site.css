@@ -156,6 +156,10 @@ footer li a.instagram { background-position: 0 -138px; }
   margin: 0 0 20px 0;
 }
 
+#team li p {
+  display: none;
+}
+
 @media (max-width: 875px) {
   #team li {
     width: 48%;
