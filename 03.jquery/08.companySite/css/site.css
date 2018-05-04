@@ -4,7 +4,7 @@ body {
   font: normal 20px "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
   color: #45494d;
-  background: #2f2840 url("images/bg_body.gif") 50% 0 repeat;
+  background: #2f2840 url("../images/bg_body.gif") 50% 0 repeat;
 }
 
 a {
@@ -50,7 +50,7 @@ h1 a {
   height: 243px;
   margin: 0 auto 50px auto;
   text-indent: -9000px;
-  background: transparent url("images/logo.png") 0 0 no-repeat
+  background: transparent url("../images/logo.png") 0 0 no-repeat
 }
 
 h2 {
@@ -105,7 +105,7 @@ footer li a {
   height: 46px;
   text-indent: -8685px;
   overflow: hidden;
-  background: transparent url("images/icons_social-media.png") 0 0 no-repeat;
+  background: transparent url("../images/icons_social-media.png") 0 0 no-repeat;
 }
 footer li a.facebook { background-position: 0 -46px; }
 footer li a.email { background-position: 0 -92px; }
