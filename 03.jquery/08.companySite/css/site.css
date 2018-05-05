@@ -156,8 +156,56 @@ footer li a.instagram { background-position: 0 -138px; }
   margin: 0 0 20px 0;
 }
 
-#team li p {
+.modal_layer {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 2;
+}
+
+.modal {
+  display: none;
+  background: #ffffff;
+  font-size: 20px;
+  padding: 125px 70px 70px 70px;
+  position: absolute;
+  text-align: left;
+  top: 100px;
+  width: 660px;
+  z-index: 3;
+}
+ 
+#team .modal p {
+  padding: 0;
+}
+
+#team .modal img {
+  display: inline-block;
+  margin: 0 30px 0 0;
+  vertical-align: middle;
+  width: 96px;
+}
+
+#team .modal h3 {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.modal a.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent url("../images/icon_close.png") 0 0 no-repeat;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  text-indent: -9999px;
 }
 
 @media (max-width: 875px) {
