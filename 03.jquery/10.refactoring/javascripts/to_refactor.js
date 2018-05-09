@@ -1,14 +1,10 @@
 $(function() {
   $("nav a").on("mouseenter", function() {
-    $(this).next("ul").css({
-      display: "block"
-    });
+    $(this).next("ul").addClass("opened");
   });
 
   $("nav").on("mouseleave", function() {
-    $(this).find("ul ul").css({
-      display: "none"
-    });
+    $(this).find("ul ul").removeClass("opened");
   });
 
   $(".button").on("click", function(e) {
@@ -35,8 +31,8 @@ $(function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
     var cc_number = $(this).find("[type=text]").val(),
-        odd_total = 0,
-        even_total = 0;
+      odd_total = 0,
+      even_total = 0;
 
     cc_number = cc_number.split("").reverse();
     for (var i = 0, len = cc_number.length; i < len; i++) {
