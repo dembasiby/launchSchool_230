@@ -10,16 +10,46 @@
   <body>
     <main>
       <h1>My Photo Gallery</h1>
-      <figure>
-        <img src="http://placehold.it/1200x900" alt="" />
-        <figcaption>Example photo</figcaption>
-      </figure>
-      <ul>
-        <li><img src="http://placehold.it/1200x900/000000" alt="" title="Photo 1" /></li>
-        <li><img src="http://placehold.it/1200x900/009900" alt="" title="Photo 2" /></li>
-        <li><img src="http://placehold.it/1200x900/000099" alt="" title="Photo 3" /></li>
-        <li><img src="http://placehold.it/1200x900/990000" alt="" title="Photo 4" /></li>
-      </ul>
+      <div id="slideshow">
+        <figure>
+          <img class="visible" src="http://placehold.it/1200x900/240000" alt="" />
+          <figcaption>Example photo</figcaption>
+        </figure>
+        <figure>
+          <img class="visible" src="http://placehold.it/1200x900/009900" alt="" />
+          <figcaption>Example photo</figcaption>
+        </figure>
+        <figure>
+          <img class="visible" src="http://placehold.it/1200x900/000099" alt="" />
+          <figcaption>Example photo</figcaption>
+        </figure>
+        <figure>
+          <img class="visible" src="http://placehold.it/1200x900/990000" alt="" />
+          <figcaption>Example photo</figcaption>
+        </figure>
+        <ul>
+          <li class="active">
+            <a href="#">
+              <img  src="http://placehold.it/1200x900/240000" alt="" title="Photo 1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="http://placehold.it/1200x900/009900" alt="" title="Photo 1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="http://placehold.it/1200x900/000099" alt="" title="Photo 1" />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="red" src="http://placehold.it/1200x900/990000" alt="" title="Photo 1" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>
