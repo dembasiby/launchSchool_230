@@ -30,6 +30,10 @@ figure {
   margin: 0;
 }
 
+figure + figure {
+  display: none;
+}
+
 figure img {
   border: 15px solid #ffffff;
 }
@@ -57,4 +61,8 @@ li {
 
 li img {
   border: 3px solid #ffffff;
+}
+
+li.active img {
+  border-color: #0066CC;
 }
