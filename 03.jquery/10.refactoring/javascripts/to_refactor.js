@@ -7,61 +7,16 @@ $(function() {
     $(this).find("ul ul").removeClass("opened");
   });
 
-  $(".button").on("click", function(e) {
+  $("main a, ul a, button").on("click", function(e) {
     e.preventDefault();
+    var $el = $(e.currentTarget);
+    console.log($el);
 
-    $(this).addClass("clicked");
-  });
-
-  $("button").on("click", function() {
-    $(this).addClass("clicked");
-  });
-
-  $(".toggle").on("click", function(e) {
-    e.preventDefault();
-
-    if ($(this).next(".accordion").hasClass("opened")) {
-      $(this).next(".accordion").removeClass("opened");
+    if ($el.hasClass("button") || $el.get(0).localName === "button") {
+      $el.addClass("clicked");
+    } else if ($el.hasClass("toggle")) {
+      $el.next(".accordion").toggleClass("opened");
     }
-    else {
-      $(this).next(".accordion").addClass("opened");
-    }
-  });
-
-  $("form").on("submit", function(e) {
-    e.preventDefault();
-    var cc_number = $(this).find("[type=text]").val(),
-      odd_total = 0,
-      even_total = 0;
-
-    cc_number = cc_number.split("").reverse();
-    for (var i = 0, len = cc_number.length; i < len; i++) {
-      if (i % 2 == 1) {
-        cc_number[i] = (+cc_number[i] * 2) + "";
-        if (cc_number[i].length > 1) {
-          cc_number[i] = +cc_number[i][0] + +cc_number[i][1];
-        }
-        else {
-          cc_number[i] = +cc_number[i];
-        }
-        odd_total += cc_number[i];
-      }
-      else {
-        even_total += +cc_number[i];
-      }
-    }
-    if ((odd_total + even_total) % 10 == 0) {
-      $(this).find(".success").show();
-      $(this).find(".error").hide();
-    }
-    else {
-      $(this).find(".error").show();
-      $(this).find(".success").hide();
-    }
-  });
-
-  $("ul a").on("click", function(e) {
-    e.preventDefault();
 
     var month = $(this).text(),
         $stone = $("#birthstone");
@@ -105,4 +60,40 @@ $(function() {
         break;
     }
   });
+
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    checkCreditCard();
+  });
+
+  function checkCreditCard() {
+    var cc_number = $("form").find("[type=text]").val(),
+      odd_total = 0,
+      even_total = 0;
+
+    cc_number = cc_number.split("").reverse();
+    for (var i = 0, len = cc_number.length; i < len; i++) {
+      if (i % 2 == 1) {
+        cc_number[i] = (+cc_number[i] * 2) + "";
+        if (cc_number[i].length > 1) {
+          cc_number[i] = +cc_number[i][0] + +cc_number[i][1];
+        }
+        else {
+          cc_number[i] = +cc_number[i];
+        }
+        odd_total += cc_number[i];
+      }
+      else {
+        even_total += +cc_number[i];
+      }
+    }
+    if ((odd_total + even_total) % 10 == 0) {
+      $(this).find(".success").show();
+      $(this).find(".error").hide();
+    }
+    else {
+      $(this).find(".error").show();
+      $(this).find(".success").hide();
+    }
+  }
 });
