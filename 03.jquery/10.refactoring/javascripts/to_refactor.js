@@ -9,55 +9,32 @@ $(function() {
 
   $("main a, ul a, button").on("click", function(e) {
     e.preventDefault();
+
     var $el = $(e.currentTarget);
-    console.log($el);
+    var month = $(this).text();
+    var $stone = $("#birthstone");
+    var message = "Your birthstone is ";
+    var monthsMessage = {
+      "January": "garnet",
+      "February": "amethyst",
+      "March": "bloodstone",
+      "April": "diamond",
+      "May": "emerald",
+      "June": "pearl, moonstone, or alexandrite", 
+      "July": "ruby",
+      "August": "peridot", 
+      "September": "sapphire",
+      "October": "opal or tourmaline", 
+      "November": "topaz or citrine", 
+      "December": "turquoise, zircon, or tanzanite",
+    };
 
     if ($el.hasClass("button") || $el.get(0).localName === "button") {
       $el.addClass("clicked");
     } else if ($el.hasClass("toggle")) {
       $el.next(".accordion").toggleClass("opened");
-    }
-
-    var month = $(this).text(),
-        $stone = $("#birthstone");
-
-    switch (month) {
-      case "January":
-        $stone.text("Your birthstone is garnet");
-        break;
-      case "February":
-        $stone.text("Your birthstone is amethyst");
-        break;
-      case "March":
-        $stone.text("Your birthstone is aquamarine or bloodstone");
-        break;
-      case "April":
-        $stone.text("Your birthstone is diamond");
-        break;
-      case "May":
-        $stone.text("Your birthstone is emerald");
-        break;
-      case "June":
-        $stone.text("Your birthstone is pearl, moonstone, or alexandrite");
-        break;
-      case "July":
-        $stone.text("Your birthstone is ruby");
-        break;
-      case "August":
-        $stone.text("Your birthstone is peridot");
-        break;
-      case "September":
-        $stone.text("Your birthstone is sapphire");
-        break;
-      case "October":
-        $stone.text("Your birthstone is opal or tourmaline");
-        break;
-      case "November":
-        $stone.text("Your birthstone is topaz or citrine");
-        break;
-      case "December":
-        $stone.text("Your birthstone is turquoise, zircon, or tanzanite");
-        break;
+    } else if ($el.parent().is("li")) {
+      $stone.text(message + monthsMessage[month]);
     }
   });
 
