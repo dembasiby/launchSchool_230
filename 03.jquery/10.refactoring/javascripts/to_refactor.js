@@ -44,7 +44,7 @@ $(function() {
   });
 
   function checkCreditCard() {
-    var cc_number = $(this).find("[type=text]").val(),
+    var cc_number = $("form").find("[type=text]").val(),
       odd_total = 0,
       even_total = 0;
 
@@ -65,12 +65,12 @@ $(function() {
       }
     }
     if ((odd_total + even_total) % 10 == 0) {
-      $(this).find(".success").show();
-      $(this).find(".error").hide();
+      $("form").find(".success").show();
+      $("form").find(".error").hide();
     }
     else {
-      $(this).find(".error").show();
-      $(this).find(".success").hide();
+      $("form").find(".error").show();
+      $("form").find(".success").hide();
     }
   }
 });
