@@ -44,7 +44,7 @@ $(function() {
   });
 
   function checkCreditCard() {
-    var cc_number = $("form").find("[type=text]").val(),
+    var cc_number = $(this).find("[type=text]").val(),
       odd_total = 0,
       even_total = 0;
 
