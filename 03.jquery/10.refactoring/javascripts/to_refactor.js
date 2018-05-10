@@ -40,15 +40,19 @@ $(function() {
 
   $("form").on("submit", function(e) {
     e.preventDefault();
-    checkCreditCard();
+    var cc_number = $(this).find("[type=text]").val(),
+      total = getLuhnTotal(cc_number),
+      is_valid = total % 10 === 0;
+      
+    $(this).find(".success").toggle(is_valid);
+    $(this).find(".error").toggle(!is_valid);
   });
 
-  function checkCreditCard() {
-    var cc_number = $("form").find("[type=text]").val(),
+  function getLuhnTotal(total) {
+    var cc_number = total.split("").reverse(),
       odd_total = 0,
       even_total = 0;
 
-    cc_number = cc_number.split("").reverse();
     for (var i = 0, len = cc_number.length; i < len; i++) {
       if (i % 2 == 1) {
         cc_number[i] = (+cc_number[i] * 2) + "";
@@ -64,13 +68,6 @@ $(function() {
         even_total += +cc_number[i];
       }
     }
-    if ((odd_total + even_total) % 10 == 0) {
-      $("form").find(".success").show();
-      $("form").find(".error").hide();
-    }
-    else {
-      $("form").find(".error").show();
-      $("form").find(".success").hide();
-    }
+    return odd_total + even_total;
   }
 });
