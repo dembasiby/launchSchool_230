@@ -20,14 +20,25 @@ $(function () {
   // $p.fadeOut();
   // $p.fadeIn();
   // $p.fadeToggle();
-  // $p.fadeTo(400, .5);
-  $p.animate({
-    left: 500,
-    top: 250,
-  }, {
-    duration: 1000,
+  // $p.fade v vTo(400, .5);
+
+  $p.slideToggle({
+    duration: '400',
+    easing: 'linear',
     complete: function () {
-      this.text('All done!');
-    },
-  });
+      console.log('Animation complete!');
+    }
+  }).slideDown(5000);
+
+
+  // $p.animate({
+  //   left: 500,
+  //   top: 250,
+  // }, {
+  //   duration: 1000,
+  //   complete: function () {
+  //     $(this).text('All done!');
+  //   },
+  // });
+
 });
