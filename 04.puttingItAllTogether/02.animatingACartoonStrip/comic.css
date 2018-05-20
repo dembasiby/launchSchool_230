@@ -7,6 +7,16 @@
   background: transparent url("xkcd.gif") 0 0 no-repeat;
 }
 
+a {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  color: blue;
+  text-decoration: none;
+  background: #f3e299;
+  border-radius: 5px;
+}
+
 [id^="panel"] {
   float: left;
   width: 215px;
