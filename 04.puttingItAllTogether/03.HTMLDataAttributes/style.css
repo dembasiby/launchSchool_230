@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 main {
   box-sizing: border-box;
   width: 100%;
@@ -12,6 +16,9 @@ main {
 article + article {
   display: none;
 }
+main ul {
+  background: #ececec;
+}
 main li {
   display: inline-block;
   margin: 0 10px;
@@ -24,7 +31,7 @@ main a {
   color: brown;
 }
 main a:focus {
-  background: #ececec;
+  background: #212120;
   text-decoration: underline;
-  color: cadetblue;
+  color: rgb(197, 217, 218);
 }
