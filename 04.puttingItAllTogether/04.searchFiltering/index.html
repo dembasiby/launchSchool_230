@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Filtering</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="search">
+            <form action="">
+                <fieldset>
+                    <input type="text" name="search" id="search" placeholder="Enter a game name">
+                    <input type="button" value="Search">
+                </fieldset>
+            </form>
+        </div>
+        <aside>
+            <form>
+                <fieldset>
+                    <div>
+                        <input type="checkbox" name="category" id="N3DS" value="Nintendo 3DS">
+                        <label for="N3DS">Nintendo 3DS</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="category" id="WiiU" value="Nintendo WiiU">
+                        <label for="WiiU">Nintendo WiiU</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="category" id="XboxOne" value="Xbox One">
+                        <label for="XboxOne">Xbox One</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="category" id="PlayStation4" value="PlayStation 4">
+                        <label for="PlayStation4">PlayStation 4</label>
+                    </div>
+                </fieldset>
+            </form>
+        </aside>
+        <main>
+            <ul>
+                <li data-id="1">The Legend of Zelda: Majora's Mask 3D for Nintendo 3DS</li>
+                <li data-id="2">Super Smash Bros. for Nintendo 3DS</li>
+                <li data-id="3">Super Smash Bros. for Nintendo WiiU</li>
+                <li data-id="4">LEGO Batman 3: Beyond Gotham for Nintendo WiiU</li>
+                <li data-id="5">LEGO Batman 3: Beyond Gotham for Xbox One</li>
+                <li data-id="6">LEGO Batman 3: Beyond Gotham for PlayStation 4</li>
+                <li data-id="7">Far Cry 4 for PlayStation 4</li>
+                <li data-id="8">Far Cry 4 for Xbox One</li>
+                <li data-id="9">Call of Duty: Advanced Warfare for PlayStation 4</li>
+                <li data-id="10">Call of Duty: Advanced Warfare for Xbox One</li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>
