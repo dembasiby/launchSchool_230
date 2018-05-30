@@ -59,14 +59,4 @@ $(function() {
       $items.filter('[data-id=' + item.id +']').toggle(checked);
     });
   });
-
-  // submit event handler on the search form
-  $search.on('', function(e) {
-    e.preventDefault();
-    console.log('Hello World!');
-  });
-
-  $search.click(function(event) {
-    console.log(event.type);
-  })
 });
