@@ -10,6 +10,45 @@
     <script src="script.js"></script>
 </head>
 <body>
-    
+  <div id="container">
+    <section id="arena">
+
+    </section>
+    <nav>
+      <ul>
+        <li><a href="#">Start</a></li>
+        <li><a href="#">Stop</a></li>
+      </ul>
+    </nav>
+    <section id="board">
+      <h1>Add a shape</h1>
+      <h2>Type</h2>
+      <form action="#" method="get">
+        <div class="radio">
+          <input type="radio" name="shape" id="square">
+          <label for="square">Square</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="shape" id="circle">
+          <label for="circle">Circle</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="shape" id="star">          
+          <label for="star">Star</label>
+        </div>
+        <p>Starting Point:</p>
+        <div>
+          <input type="number" name="startingX" id="startingX" placeholder="x:">
+          <input type="number" name="startingY" id="startingY" placeholder="y:">
+        </div>
+        <p>Ending Point:</p>
+        <div>
+          <input type="number" name="endingX" id="endingX" placeholder="x:">
+          <input type="number" name="endingY" id="endingY" placeholder="y:">
+        </div>
+        <input type="submit" value="Add">
+      </form>
+    </section>
+  </div>
 </body>
 </html>
