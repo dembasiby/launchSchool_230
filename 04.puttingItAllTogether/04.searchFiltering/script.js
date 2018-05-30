@@ -43,7 +43,6 @@ $(function() {
     
   var $categories = $(':checkbox');
   var $items = $('main li');
-  var $search = $('#searchField');
 
   // change event handler on categories
   $categories.on('change', function() {
