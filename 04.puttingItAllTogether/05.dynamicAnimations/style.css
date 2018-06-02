@@ -1,0 +1,54 @@
+/* 
+    #0d62d2
+    #0d62d2
+ */
+body {
+    background: #84001a;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    box-sizing: border-box;
+    padding: 25px;
+    width: 100%;
+    max-width: 855px;
+    background: #fff;
+    margin: 0 auto;
+}
+#canvas {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 25px 0;
+    width: 100%;
+    max-width: 825px;
+    background: linear-gradient(to bottom,#ffffff 0%, #0066cc 100%);
+    height: 600px;
+    border: 1px solid #cecece;
+    box-shadow: #0066cc;
+}
+nav, #board {
+    padding: 10px 30px;
+}
+nav li {
+    display: inline-block;
+}
+#starShape,
+#circleShape,
+#squareShape {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#starShape {
+    background: url('star.png') 0 0 no-repeat;
+    background-size: cover;  
+}
+#circleShape {
+    border-radius: 50%;
+}
+
