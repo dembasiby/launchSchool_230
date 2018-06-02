@@ -1,6 +1,13 @@
 $(function() {
   var chosenShapes = [];
   
+  function reset(shape) {
+    shape.offset({
+      top: $('#startingX').val(), 
+      left: $('#startingY').val(),
+    });
+  }
+  
   $('form').on('submit', function(e) {
     e.preventDefault();
   
@@ -10,10 +17,7 @@ $(function() {
     var elem = $('#' + id);
     
     // add the starting coordinates to chosen shape
-    elem.offset({
-      top: $('#startingX').val(), 
-      left: $('#startingY').val(),
-    });
+    reset(elem);
 
     // add the ending coordinates to chosen shape
     elem.endX = $('#endingX').val();
@@ -30,6 +34,7 @@ $(function() {
     e.preventDefault();
 
     chosenShapes.forEach(function(shape) {
+      reset(shape);
       $(shape).animate({
         top: shape.endX,
         left: shape.endY,
