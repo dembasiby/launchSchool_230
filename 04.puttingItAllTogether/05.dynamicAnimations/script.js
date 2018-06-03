@@ -1,10 +1,10 @@
 $(function() {
   var chosenShapes = [];
-  
-  function reset(shape) {
-    shape.offset({
-      top: $('#startingX').val(), 
-      left: $('#startingY').val(),
+
+  function resetPosition(shape) {
+    $(shape).offset({
+      top: shape.startX,
+      left: shape.startY,
     });
   }
   
@@ -13,15 +13,16 @@ $(function() {
   
     // select the checked shape
     // identify it as the shape object in the canvas
-    var id = $(':radio:checked').get(0).id + 'Shape';
+    var id = $(':radio:checked').val() + 'Shape';
     var elem = $('#' + id);
     
     // add the starting coordinates to chosen shape
-    reset(elem);
-
     // add the ending coordinates to chosen shape
-    elem.endX = $('#endingX').val();
-    elem.endY = $('#endingY').val();
+    elem.startX = $('#startingX').val(), 
+    elem.startY = $('#startingY').val(),
+    elem.endX   = $('#endingX').val();
+    elem.endY   = $('#endingY').val();
+    resetPosition(elem);
 
     // display the chosen shape
     elem.css('display', 'inline-block');
@@ -34,11 +35,14 @@ $(function() {
     e.preventDefault();
 
     chosenShapes.forEach(function(shape) {
-      reset(shape);
+
       $(shape).animate({
         top: shape.endX,
         left: shape.endY,
-      }, 1000);
+      }, {
+        duration: 1000,
+        complete: resetPosition(shape),
+      });
     });
   });
 
@@ -47,6 +51,7 @@ $(function() {
 
     chosenShapes.forEach(function(shape) {
       $(shape).stop();
+
     });
   });
 });
