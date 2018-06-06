@@ -24,6 +24,9 @@
         for (var i = e.length; i >= 0; i -= 1) {
           if (e[i] === f) { return i; }
         }
+      },
+      sample: function () {
+        
       }
       
     };
