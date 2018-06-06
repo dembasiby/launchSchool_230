@@ -26,7 +26,19 @@
         }
       },
       sample: function () {
+        var arr = [];
         
+        if (arguments.length === 0) {
+          return e[Math.round(Math.random()) * (e.length - 1)];
+        }
+
+        for (var i = 0; i < arguments[0]; i += 1) {
+          if (arr.indexOf(e[i]) === -1) {
+            arr.push(e[i]);
+          }
+        }
+
+        return arr;
       }
       
     };
@@ -46,4 +58,4 @@
   window._ = _;
 }());
 
-console.log(_([1, 2, 3]).lastIndexOf(2));
+console.log(_([1]).sample());
