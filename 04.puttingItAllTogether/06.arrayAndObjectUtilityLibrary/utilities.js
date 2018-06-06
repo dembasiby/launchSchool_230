@@ -21,7 +21,9 @@
         return newArr;
       },
       lastIndexOf: function (f) {
-
+        for (var i = e.length; i >= 0; i -= 1) {
+          if (e[i] === f) { return i; }
+        }
       }
       
     };
@@ -41,4 +43,4 @@
   window._ = _;
 }());
 
-console.log(_.range(6, 10));
+console.log(_([1, 2, 3]).lastIndexOf(2));

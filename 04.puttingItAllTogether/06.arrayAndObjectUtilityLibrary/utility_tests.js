@@ -86,16 +86,16 @@ test("lastIndexOf returns last index of supplied value", function() {
   return _([1, 1, 1]).lastIndexOf(1) === 2 && _([1, 2, 3]).lastIndexOf(2) === 1;
 });
 
-// // _.sample
-// test("sample is defined", function() {
-//   return typeof _().sample === "function";
-// });
-// test("sample returns a single element when no argument supplied", function() {
-//   return _([1]).sample() === 1;
-// });
-// test("sample returns multiple, non-repetitive elements when a numeric argument supplied", function() {
-//   return _([1, 2, 3]).sample(3).length === 3;
-// });
+// _.sample
+test("sample is defined", function() {
+  return typeof _().sample === "function";
+});
+test("sample returns a single element when no argument supplied", function() {
+  return _([1]).sample() === 1;
+});
+test("sample returns multiple, non-repetitive elements when a numeric argument supplied", function() {
+  return _([1, 2, 3]).sample(3).length === 3;
+});
 
 // // _.findWhere
 // test("findWhere is defined", function() {
