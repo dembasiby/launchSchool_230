@@ -17,7 +17,7 @@
             newArr.push(element);
           }
         });
-        
+
         return newArr;
       },
       lastIndexOf: function (f) {
@@ -25,17 +25,22 @@
           if (e[i] === f) { return i; }
         }
       },
-      sample: function () {
+      sample: function (qty) {
         var arr = [];
-        
-        if (arguments.length === 0) {
-          return e[Math.round(Math.random()) * (e.length - 1)];
-        }
+        var copy = e.slice();
 
-        for (var i = 0; i < arguments[0]; i += 1) {
-          if (arr.indexOf(e[i]) === -1) {
-            arr.push(e[i]);
-          }
+        var get = function () {
+          var idx = Math.floor(Math.random() * e.length);
+          var el = copy[idx];
+          copy.splice(idx, 1);
+
+          return el;
+        };
+
+        if (!qty) { return get(); }
+        while (qty) {
+          arr.push(get());
+          qty -= 1;
         }
 
         return arr;
@@ -43,7 +48,7 @@
       findWhere: function () {
 
       },
-      
+
     };
   };
 
@@ -51,14 +56,14 @@
     var n = [];
     var args = Array.prototype.slice.call(arguments);
     var i = args.length === 1 ? 0 : _(args).first();
-    
+
     for (; i < _(args).last(); i += 1) {
       n.push(i);
     }
     return n;
-  }
+  };
 
   window._ = _;
 }());
 
-console.log(_([1]).sample());
+// console.log(_([1]).sample());
