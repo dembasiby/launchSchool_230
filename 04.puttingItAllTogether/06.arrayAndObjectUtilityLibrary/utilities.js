@@ -39,7 +39,10 @@
         }
 
         return arr;
-      }
+      },
+      findWhere: function () {
+
+      },
       
     };
   };

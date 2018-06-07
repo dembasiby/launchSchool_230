@@ -97,31 +97,31 @@ test("sample returns multiple, non-repetitive elements when a numeric argument s
   return _([1, 2, 3]).sample(3).length === 3;
 });
 
-// // _.findWhere
-// test("findWhere is defined", function() {
-//   return typeof _().findWhere === "function";
-// });
-// (function() {
-//   var dict = [{ foo: "bar", idx: 0 }, { foo: "baz", idx: 1 }, { foo: "bar", idx: 2 }];
+// _.findWhere
+test("findWhere is defined", function() {
+  return typeof _().findWhere === "function";
+});
+(function() {
+  var dict = [{ foo: "bar", idx: 0 }, { foo: "baz", idx: 1 }, { foo: "bar", idx: 2 }];
 
-//   test("findWhere returns the first object with matched properties", function() {
-//     return _(dict).findWhere({ foo: "bar" }).idx === 0;
-//   });
-// })();
-// (function() {
-//   var dict = [{ foo: "bar", quux: "q", idx: 0 }, { foo: "baz", quux: "z", idx: 1 }, { foo: "bar", quux: "z", idx: 2 }];
+  test("findWhere returns the first object with matched properties", function() {
+    return _(dict).findWhere({ foo: "bar" }).idx === 0;
+  });
+})();
+(function() {
+  var dict = [{ foo: "bar", quux: "q", idx: 0 }, { foo: "baz", quux: "z", idx: 1 }, { foo: "bar", quux: "z", idx: 2 }];
 
-//   test("findWhere returns the first object with multiple matched properties", function() {
-//     return _(dict).findWhere({ foo: "bar", quux: "z" }).idx === 2;
-//   });
-// })();
-// (function() {
-//   var dict = [{ foo: "bar", idx: 0 }, { foo: "baz", idx: 1 }, { foo: "bar", idx: 2 }];
+  test("findWhere returns the first object with multiple matched properties", function() {
+    return _(dict).findWhere({ foo: "bar", quux: "z" }).idx === 2;
+  });
+})();
+(function() {
+  var dict = [{ foo: "bar", idx: 0 }, { foo: "baz", idx: 1 }, { foo: "bar", idx: 2 }];
 
-//   test("findWhere returns undefined with no matched properties", function() {
-//     return _(dict).findWhere({ foo: "quux" }) === undefined;
-//   });
-// })();
+  test("findWhere returns undefined with no matched properties", function() {
+    return _(dict).findWhere({ foo: "quux" }) === undefined;
+  });
+})();
 
 // // _.where
 // test("where is defined", function() {
