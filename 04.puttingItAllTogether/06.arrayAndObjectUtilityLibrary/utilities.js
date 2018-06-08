@@ -65,6 +65,9 @@
 
         return obj1;
       },
+      where: function() {
+        
+      }
 
     };
   };

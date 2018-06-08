@@ -123,21 +123,21 @@ test("findWhere is defined", function() {
   });
 })();
 
-// // _.where
-// test("where is defined", function() {
-//   return typeof _().where === "function";
-// });
+// _.where
+test("where is defined", function() {
+  return typeof _().where === "function";
+});
 
-// (function() {
-//   var dict = [{ foo: "bar", idx: 0 }, { foo: "baz", idx: 1 }, { foo: "bar", idx: 2 }];
+(function() {
+  var dict = [{ foo: "bar", idx: 0 }, { foo: "baz", idx: 1 }, { foo: "bar", idx: 2 }];
 
-//   test("where returns an array with one matched object", function() {
-//     return _(dict).where({ idx: 0 }).length === 1;
-//   });
-//   test("where returns an array with two matched objects", function() {
-//     return _(dict).where({ foo: "bar" }).length === 2;
-//   });
-// })();
+  test("where returns an array with one matched object", function() {
+    return _(dict).where({ idx: 0 }).length === 1;
+  });
+  test("where returns an array with two matched objects", function() {
+    return _(dict).where({ foo: "bar" }).length === 2;
+  });
+})();
 
 // // _.pluck
 // test("pluck is defined", function() {
