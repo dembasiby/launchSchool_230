@@ -88,7 +88,13 @@
         return arr;
       },
       keys: function () {
+        var arr = [];
 
+        for (var k in e) {
+          if (arr.indexOf(k) === -1) { arr.push(k); }
+        }
+
+        return arr;
       }
     };
   };
@@ -108,4 +114,4 @@
 }());
 
 
-
+console.log(_({ foo: 'bar', baz: 'quuz'}).keys());
