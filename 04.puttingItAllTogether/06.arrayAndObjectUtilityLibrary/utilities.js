@@ -95,6 +95,11 @@
         }
 
         return arr;
+      },
+      values: function () {
+        return this.keys().map(function (key) {
+          return e[key];
+        });
       }
     };
   };
