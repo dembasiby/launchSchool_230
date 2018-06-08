@@ -51,7 +51,7 @@
         for (i = 0; i < e.length; i += 1) {
           var match = false;
           for ( var key in obj ) {
-            if (e[i][key] !== obj[key] || e[i][key] === undefined) {
+            if (e[i][key] !== obj[key]) {
               match = false;
               break; 
             } else {
