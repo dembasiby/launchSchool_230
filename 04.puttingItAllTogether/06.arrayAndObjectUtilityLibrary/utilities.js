@@ -76,10 +76,17 @@
       where: function(obj) {
         return findObjs(e, obj, true);
       },
-      pluck: function () {
+      pluck: function (str) {
+        var arr = [];
 
-      }
+        e.forEach(function (element) {
+          for (var k in element) { 
+            if (k === str) arr.push(element[k]); 
+          }
+        });
 
+        return arr;
+      },
     };
   };
 
@@ -96,5 +103,8 @@
 
   window._ = _;
 }());
+
+var coll = [{ foo: "bar" }, { foo: "baz" }];
+console.log(_(coll).pluck("foo"));
 
 
