@@ -139,23 +139,23 @@ test("where is defined", function() {
   });
 })();
 
-// // _.pluck
-// test("pluck is defined", function() {
-//   return typeof _().pluck === "function";
-// });
+// _.pluck
+test("pluck is defined", function() {
+  return typeof _().pluck === "function";
+});
 
-// test("pluck returns array of two values", function() {
-//   var coll = [{ foo: "bar" }, { foo: "baz" }],
-//       pluck = _(coll).pluck("foo");
+test("pluck returns array of two values", function() {
+  var coll = [{ foo: "bar" }, { foo: "baz" }],
+      pluck = _(coll).pluck("foo");
 
-//   return pluck.length === 2;
-// });
-// test("pluck returns both values", function() {
-//   var coll = [{ foo: "bar" }, { foo: "baz" }],
-//       pluck = _(coll).pluck("foo");
+  return pluck.length === 2;
+});
+test("pluck returns both values", function() {
+  var coll = [{ foo: "bar" }, { foo: "baz" }],
+      pluck = _(coll).pluck("foo");
 
-//   return pluck[0] === "bar" && pluck[1] === "baz";
-// });
+  return pluck[0] === "bar" && pluck[1] === "baz";
+});
 
 // // _.keys
 // test("keys is defined", function() {

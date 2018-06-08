@@ -80,6 +80,9 @@
         });
 
         return arr;
+      },
+      pluck: function () {
+        
       }
 
     };
