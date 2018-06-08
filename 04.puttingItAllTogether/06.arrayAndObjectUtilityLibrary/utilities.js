@@ -2,7 +2,7 @@
 (function () {
   function findObjs(e, obj, multiple) {
     var obj1 = multiple ? [] : undefined;
-        
+
     e.some(function(element) {
       var match = true;
 
@@ -12,13 +12,13 @@
         }
       }
 
-      if (match) { 
+      if (match) {
         if (!obj1) {
-          obj1 = element; 
+          obj1 = element;
           return true;
         }
         obj1.push(element);
-        
+
       }
     });
 
@@ -80,13 +80,16 @@
         var arr = [];
 
         e.forEach(function (element) {
-          for (var k in element) { 
-            if (k === str) arr.push(element[k]); 
+          for (var k in element) {
+            if (k === str) { arr.push(element[k]); }
           }
         });
 
         return arr;
       },
+      keys: function () {
+
+      }
     };
   };
 
@@ -104,7 +107,5 @@
   window._ = _;
 }());
 
-var coll = [{ foo: "bar" }, { foo: "baz" }];
-console.log(_(coll).pluck("foo"));
 
 
