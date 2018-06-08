@@ -49,13 +49,11 @@
         var i;
         var obj1;
         for (i = 0; i < e.length; i += 1) {
-          var match = false;
+          var match = true;
           for ( var key in obj ) {
             if (e[i][key] !== obj[key]) {
               match = false;
               break; 
-            } else {
-              match = true;
             }
           }
 
@@ -84,6 +82,3 @@
 
   window._ = _;
 }());
-
-var dict = [{ foo: "bar", quux: "q", idx: 0 }, { foo: "baz", quux: "z", idx: 1 }, { foo: "bar", quux: "z", idx: 2 }];
-console.log(_(dict).findWhere({ foo: "bar", quux: "z" }));
