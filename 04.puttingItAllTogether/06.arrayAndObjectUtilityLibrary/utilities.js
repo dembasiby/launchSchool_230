@@ -12,7 +12,7 @@
         var newArr = [];
         var args = Array.prototype.slice.call(arguments);
 
-        e.forEach(element => {
+        e.forEach( function (element) {
           if (args.indexOf(element) === -1) {
             newArr.push(element);
           }
@@ -45,8 +45,27 @@
 
         return arr;
       },
-      findWhere: function () {
+      findWhere: function (obj) {
+        var i;
+        var obj1;
+        for (i = 0; i < e.length; i += 1) {
+          var match = false;
+          for ( var key in obj ) {
+            if (e[i][key] !== obj[key] || e[i][key] === undefined) {
+              match = false;
+              break; 
+            } else {
+              match = true;
+            }
+          }
 
+          if (match) {
+            obj1 = e[i];
+            break;  
+          }
+        }
+
+        return obj1;
       },
 
     };
@@ -66,4 +85,5 @@
   window._ = _;
 }());
 
-// console.log(_([1]).sample());
+var dict = [{ foo: "bar", quux: "q", idx: 0 }, { foo: "baz", quux: "z", idx: 1 }, { foo: "bar", quux: "z", idx: 2 }];
+console.log(_(dict).findWhere({ foo: "bar", quux: "z" }));
