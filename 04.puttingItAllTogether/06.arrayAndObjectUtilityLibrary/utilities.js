@@ -1,5 +1,30 @@
 
 (function () {
+  function findObjs(e, obj, multiple) {
+    var obj1 = multiple ? [] : undefined;
+        
+    e.some(function(element) {
+      var match = true;
+
+      for ( var key in obj ) {
+        if (element[key] !== obj[key]) {
+          match = false;
+        }
+      }
+
+      if (match) { 
+        if (!obj1) {
+          obj1 = element; 
+          return true;
+        }
+        obj1.push(element);
+        
+      }
+    });
+
+    return obj1;
+  }
+
   var _ = function(e) {
     return {
       first: function() {
@@ -46,43 +71,13 @@
         return arr;
       },
       findWhere: function (obj) {
-        var i;
-        var obj1;
-        for (i = 0; i < e.length; i += 1) {
-          var match = true;
-          for ( var key in obj ) {
-            if (e[i][key] !== obj[key]) {
-              match = false;
-              break; 
-            }
-          }
-
-          if (match) {
-            obj1 = e[i];
-            break;  
-          }
-        }
-
-        return obj1;
+        return findObjs(e, obj, false);
       },
       where: function(obj) {
-        var arr = [];
-        e.forEach(function (element) {
-          var match = true;
-          for ( var key in obj ) {
-            if (element[key] !== obj[key]) {
-              match = false;
-              break; 
-            }
-          }
-
-          if (match) { arr.push(element); }
-        });
-
-        return arr;
+        return findObjs(e, obj, true);
       },
       pluck: function () {
-        
+
       }
 
     };
@@ -101,3 +96,5 @@
 
   window._ = _;
 }());
+
+
