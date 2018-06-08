@@ -65,8 +65,21 @@
 
         return obj1;
       },
-      where: function() {
-        
+      where: function(obj) {
+        var arr = [];
+        e.forEach(function (element) {
+          var match = true;
+          for ( var key in obj ) {
+            if (element[key] !== obj[key]) {
+              match = false;
+              break; 
+            }
+          }
+
+          if (match) { arr.push(element); }
+        });
+
+        return arr;
       }
 
     };
