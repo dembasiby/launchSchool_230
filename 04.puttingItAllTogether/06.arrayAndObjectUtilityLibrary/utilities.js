@@ -100,6 +100,9 @@
         return this.keys().map(function (key) {
           return e[key];
         });
+      },
+      extend: function () {
+
       }
     };
   };
@@ -119,4 +122,3 @@
 }());
 
 
-console.log(_({ foo: 'bar', baz: 'quuz'}).keys());
