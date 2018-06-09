@@ -123,6 +123,9 @@
       isElement: function (el) {
         return this.isElement(el);
 
+      },
+      isArray: function () {
+
       }
 
     };
@@ -150,6 +153,9 @@
   };
   _.isElement = function(el) {
     return el instanceof Element;
+  };
+  _.isArray = function () {
+
   };
 
   window._ = _;
