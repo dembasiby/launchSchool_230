@@ -120,6 +120,10 @@
       has: function (prop) {
         return !!e[prop];
       },
+      isElement: function (el) {
+        return this.isElement(el);
+
+      }
 
     };
   };
@@ -144,8 +148,8 @@
 
     return oldObj;
   };
-  _.isElement = function() {
-
+  _.isElement = function(el) {
+    return el instanceof Element;
   };
 
   window._ = _;
