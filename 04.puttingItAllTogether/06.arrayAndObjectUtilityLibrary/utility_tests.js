@@ -216,96 +216,96 @@ test("extend works with any number of objects", function() {
   return crazy_object.foo === "bar";
 });
 
-// // _.pick
-// test("pick is defined", function() {
-//   return typeof _().pick === "function";
-// });
+// _.pick
+test("pick is defined", function() {
+  return typeof _().pick === "function";
+});
 
-// test("pick returns a new object with the passed in properties", function() {
-//   var old_obj = { foo: "bar" },
-//       new_obj = _(old_obj).pick("foo");
+test("pick returns a new object with the passed in properties", function() {
+  var old_obj = { foo: "bar" },
+      new_obj = _(old_obj).pick("foo");
 
-//   return new_obj.foo === old_obj.foo && new_obj !== old_obj;
-// });
-// test("pick ignores any properties passed in that do not exist on the source object", function() {
-//   var old_obj = { foo: "bar" },
-//       new_obj = _(old_obj).pick("foo");
+  return new_obj.foo === old_obj.foo && new_obj !== old_obj;
+});
+test("pick ignores any properties passed in that do not exist on the source object", function() {
+  var old_obj = { foo: "bar" },
+      new_obj = _(old_obj).pick("foo");
 
-//   return _(new_obj).pick("foo", "bar").bar === undefined;
-// });
+  return _(new_obj).pick("foo", "bar").bar === undefined;
+});
 
-// // _.omit
-// test("omit is defined", function() {
-//   return typeof _().omit === "function";
-// });
+// _.omit
+test("omit is defined", function() {
+  return typeof _().omit === "function";
+});
 
-// test("omit returns a new object with any passed in properties omitted", function() {
-//   var old_obj = { foo: "bar" },
-//       new_obj = _(old_obj).omit("foo");
+test("omit returns a new object with any passed in properties omitted", function() {
+  var old_obj = { foo: "bar" },
+      new_obj = _(old_obj).omit("foo");
 
-//   return new_obj.foo === undefined;
-// });
+  return new_obj.foo === undefined;
+});
 
-// test("omit doesn't insert properties that aren't on the original object", function() {
-//   var old_obj = { foo: "bar" },
-//       new_obj = _(old_obj).omit("foo", "foo2");
+test("omit doesn't insert properties that aren't on the original object", function() {
+  var old_obj = { foo: "bar" },
+      new_obj = _(old_obj).omit("foo", "foo2");
 
-//   return new_obj.hasOwnProperty('foo2') === false;
-// });
+  return new_obj.hasOwnProperty('foo2') === false;
+});
 
-// test("omit doesn't remove all the properties", function() {
-//   var old_obj = { foo: "bar", foo2: "bar2" },
-//       new_obj = _(old_obj).omit("foo");
+test("omit doesn't remove all the properties", function() {
+  var old_obj = { foo: "bar", foo2: "bar2" },
+      new_obj = _(old_obj).omit("foo");
 
-//   return new_obj.hasOwnProperty('foo') === false && new_obj.hasOwnProperty('foo2') === true;
-// });
+  return new_obj.hasOwnProperty('foo') === false && new_obj.hasOwnProperty('foo2') === true;
+});
 
-// // _.has
-// test("has is defined", function() {
-//   return typeof _().has === "function";
-// });
+// _.has
+test("has is defined", function() {
+  return typeof _().has === "function";
+});
 
-// test("has returns true when property exists", function() {
-//   var o = { foo: "bar" };
+test("has returns true when property exists", function() {
+  var o = { foo: "bar" };
 
-//   return _(o).has("foo");
-// });
-// test("has returns false when property does not exist", function() {
-//   var o = { foo: "bar" };
+  return _(o).has("foo");
+});
+test("has returns false when property does not exist", function() {
+  var o = { foo: "bar" };
 
-//   return !_(o).has("bar");
-// });
-// test("has returns true when hasOwnProperty is defined", function() {
-//   var o = { foo: "bar" };
-//   o.hasOwnProperty = function() { };
+  return !_(o).has("bar");
+});
+test("has returns true when hasOwnProperty is defined", function() {
+  var o = { foo: "bar" };
+  o.hasOwnProperty = function() { };
 
-//   return _(o).has("hasOwnProperty");
-// });
+  return _(o).has("hasOwnProperty");
+});
 
-// (["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber"]).forEach(function(method) {
-//   test(method + " is defined", function() {
-//     return typeof _[method] === "function" && typeof _()[method] === "function";
-//   });
-// });
-// test("isElement returns true if DOM element, otherwise false", function() {
-//   return _.isElement(document.body) && !_.isElement({});
-// });
-// test("isArray returns true if array, otherwise false", function() {
-//   return _.isArray([]) && !_.isArray({ 0: "a", 1: "b" });
-// });
-// test("isObject returns true if object or function, otherwise false", function() {
-//   return _.isObject({}) && _.isObject([]) && _.isObject(isNaN) && !_.isObject(1);
-// });
-// test("isFunction returns true if function, otherwise false", function() {
-//   return _.isFunction(isNaN) && !_.isFunction({});
-// });
-// test("isBoolean returns true if boolean (primitive or object), otherwise false", function() {
-//   return _.isBoolean(false) && _.isBoolean(new Boolean(false)) && !_.isBoolean(1);
-// });
-// test("isString returns true if string, otherwise false", function() {
-//   return _.isString("") && _.isString(new String()) && !_.isString(1);
-// });
-// test("isNumber returns true if number, (primitive or object), otherwise false", function() {
-//   return _.isNumber(1) && _.isNumber(new Number(5)) && !_.isNumber("5");
-// });
+(["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber"]).forEach(function(method) {
+  test(method + " is defined", function() {
+    return typeof _[method] === "function" && typeof _()[method] === "function";
+  });
+});
+test("isElement returns true if DOM element, otherwise false", function() {
+  return _.isElement(document.body) && !_.isElement({});
+});
+test("isArray returns true if array, otherwise false", function() {
+  return _.isArray([]) && !_.isArray({ 0: "a", 1: "b" });
+});
+test("isObject returns true if object or function, otherwise false", function() {
+  return _.isObject({}) && _.isObject([]) && _.isObject(isNaN) && !_.isObject(1);
+});
+test("isFunction returns true if function, otherwise false", function() {
+  return _.isFunction(isNaN) && !_.isFunction({});
+});
+test("isBoolean returns true if boolean (primitive or object), otherwise false", function() {
+  return _.isBoolean(false) && _.isBoolean(new Boolean(false)) && !_.isBoolean(1);
+});
+test("isString returns true if string, otherwise false", function() {
+  return _.isString("") && _.isString(new String()) && !_.isString(1);
+});
+test("isNumber returns true if number, (primitive or object), otherwise false", function() {
+  return _.isNumber(1) && _.isNumber(new Number(5)) && !_.isNumber("5");
+});
 

@@ -101,7 +101,28 @@
           return e[key];
         });
       },
-      
+      pick: function () {
+        var newObj = {};
+        var args = [].slice.call(arguments);
+        args.forEach(function (prop) {
+          if (e[prop]) { newObj[prop] = e[prop]; }
+        });
+        return newObj;
+      },
+      omit: function () {
+        var newObj = {};
+        var args = [].slice.call(arguments);
+        for (var k in e) {
+          if (args.indexOf(k) === -1) {
+            newObj[k] = e[k];
+          }
+        }
+        return newObj;
+      },
+      has: function (prop) {
+        return !!e[prop];
+      },
+
     };
   };
 
@@ -117,7 +138,7 @@
   };
 
   _.extend = function () {
-    var args = Array.prototype.slice.call(arguments).slice(1);
+    var args = [].slice.call(arguments).slice(1);
     var oldObj = arguments[0];
     args.forEach(function (obj) {
       for (var k in obj) {
