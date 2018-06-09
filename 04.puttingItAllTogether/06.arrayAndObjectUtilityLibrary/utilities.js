@@ -141,12 +141,13 @@
     var args = [].slice.call(arguments).slice(1);
     var oldObj = arguments[0];
     args.forEach(function (obj) {
-      for (var k in obj) {
-        oldObj[k] = obj[k];
-      }
+      for (var k in obj) { oldObj[k] = obj[k]; }
     });
 
     return oldObj;
+  };
+  _.isElement = function() {
+
   };
 
   window._ = _;
