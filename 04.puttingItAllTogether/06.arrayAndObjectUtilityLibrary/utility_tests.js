@@ -157,64 +157,64 @@ test("pluck returns both values", function() {
   return pluck[0] === "bar" && pluck[1] === "baz";
 });
 
-// // _.keys
-// test("keys is defined", function() {
-//   return typeof _().keys === "function";
-// });
+// _.keys
+test("keys is defined", function() {
+  return typeof _().keys === "function";
+});
 
-// test("keys returns an array of keys from the object", function() {
-//   var keys = _({ foo: "bar", baz: "quuz" }).keys();
-//   return keys.length === 2;
-// });
-// test("keys returns all keys that are own properties of the object", function() {
-//   var keys = _({ foo: "bar", baz: "quuz" }).keys();
-//   return keys.indexOf("foo") !== -1 && keys.indexOf("baz") !== -1;
-// });
-// test("keys does not return inherited object properties", function() {
-//   var keys = _({ foo: "bar", baz: "quuz" }).keys();
-//   return keys.indexOf("toString") === -1;
-// });
+test("keys returns an array of keys from the object", function() {
+  var keys = _({ foo: "bar", baz: "quuz" }).keys();
+  return keys.length === 2;
+});
+test("keys returns all keys that are own properties of the object", function() {
+  var keys = _({ foo: "bar", baz: "quuz" }).keys();
+  return keys.indexOf("foo") !== -1 && keys.indexOf("baz") !== -1;
+});
+test("keys does not return inherited object properties", function() {
+  var keys = _({ foo: "bar", baz: "quuz" }).keys();
+  return keys.indexOf("toString") === -1;
+});
 
-// // _.values
-// test("values is defined", function() {
-//   return typeof _().values === "function";
-// });
+// _.values
+test("values is defined", function() {
+  return typeof _().values === "function";
+});
 
-// test("values returns an array of values from the object", function() {
-//   var values = _({ foo: "bar", baz: "quuz" }).values();
-//   return values.length === 2;
-// });
-// test("values returns all values that are own properties of the object", function() {
-//   var values = _({ foo: "bar", baz: "quuz" }).values();
-//   return values.indexOf("bar") !== -1 && values.indexOf("quuz") !== -1;
-// });
+test("values returns an array of values from the object", function() {
+  var values = _({ foo: "bar", baz: "quuz" }).values();
+  return values.length === 2;
+});
+test("values returns all values that are own properties of the object", function() {
+  var values = _({ foo: "bar", baz: "quuz" }).values();
+  return values.indexOf("bar") !== -1 && values.indexOf("quuz") !== -1;
+});
 
-// // _.extend
-// test("extend is defined", function() {
-//   return typeof _.extend === "function";
-// });
+// _.extend
+test("extend is defined", function() {
+  return typeof _.extend === "function";
+});
 
-// test("extend returns an extended object using new object's values", function() {
-//   var new_obj = { bar: "baz" },
-//       old_obj = { foo: "bar" },
-//       ext_obj = _.extend(old_obj, new_obj);
-//       crazy_object = _.extend({ foo: "quuz" }, new_obj, old_obj);
-//   return ext_obj.foo === "bar" && ext_obj.bar === "baz";
-// });
-// test("extend modifies the first object passed in rather than creating a new object", function() {
-//   var new_obj = { bar: "baz" },
-//       old_obj = { foo: "bar" },
-//       ext_obj = _.extend(old_obj, new_obj);
-//       crazy_object = _.extend({ foo: "quuz" }, new_obj, old_obj);
-//   return new_obj === _.extend(new_obj, {});
-// });
-// test("extend works with any number of objects", function() {
-//   var new_obj = { bar: "baz" },
-//       old_obj = { foo: "bar" },
-//       ext_obj = _.extend(old_obj, new_obj);
-//       crazy_object = _.extend({ foo: "quuz" }, new_obj, old_obj);
-//   return crazy_object.foo === "bar";
-// });
+test("extend returns an extended object using new object's values", function() {
+  var new_obj = { bar: "baz" },
+      old_obj = { foo: "bar" },
+      ext_obj = _.extend(old_obj, new_obj);
+      crazy_object = _.extend({ foo: "quuz" }, new_obj, old_obj);
+  return ext_obj.foo === "bar" && ext_obj.bar === "baz";
+});
+test("extend modifies the first object passed in rather than creating a new object", function() {
+  var new_obj = { bar: "baz" },
+      old_obj = { foo: "bar" },
+      ext_obj = _.extend(old_obj, new_obj);
+      crazy_object = _.extend({ foo: "quuz" }, new_obj, old_obj);
+  return new_obj === _.extend(new_obj, {});
+});
+test("extend works with any number of objects", function() {
+  var new_obj = { bar: "baz" },
+      old_obj = { foo: "bar" },
+      ext_obj = _.extend(old_obj, new_obj);
+      crazy_object = _.extend({ foo: "quuz" }, new_obj, old_obj);
+  return crazy_object.foo === "bar";
+});
 
 // // _.pick
 // test("pick is defined", function() {

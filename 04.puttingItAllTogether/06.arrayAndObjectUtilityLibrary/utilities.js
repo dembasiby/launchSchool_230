@@ -101,9 +101,7 @@
           return e[key];
         });
       },
-      extend: function () {
-
-      }
+      
     };
   };
 
@@ -116,6 +114,18 @@
       n.push(i);
     }
     return n;
+  };
+
+  _.extend = function () {
+    var args = Array.prototype.slice.call(arguments).slice(1);
+    var oldObj = arguments[0];
+    args.forEach(function (obj) {
+      for (var k in obj) {
+        oldObj[k] = obj[k];
+      }
+    });
+
+    return oldObj;
   };
 
   window._ = _;
