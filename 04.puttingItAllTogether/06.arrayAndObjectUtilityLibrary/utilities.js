@@ -113,9 +113,7 @@
         var newObj = {};
         var args = [].slice.call(arguments);
         for (var k in e) {
-          if (args.indexOf(k) === -1) {
-            newObj[k] = e[k];
-          }
+          if (!args.includes(k)) { newObj[k] = e[k]; }
         }
         return newObj;
       },
