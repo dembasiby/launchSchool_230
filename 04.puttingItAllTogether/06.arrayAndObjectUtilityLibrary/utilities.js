@@ -163,6 +163,10 @@
   _.isArray = Array.isArray || function(el) {
     return toString.call(el) === '[object Array]';
   };
+  _.isObject = function(el) {
+    var type = typeof el;
+    return type === 'object' || type === 'function';
+  };
 
   
 
