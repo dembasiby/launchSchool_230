@@ -26,7 +26,9 @@
   }
 
   var _ = function(e) {
-    return {
+    
+
+    var obj = {
       first: function() {
         return e[0];
       },
@@ -120,16 +122,20 @@
       has: function (prop) {
         return !!e[prop];
       },
-      isElement: function (el) {
-        return this.isElement(el);
-
-      },
-      isArray: function () {
-
-      }
-
+      
     };
+
+    (['isElement', 'isArray', 'isObject', 'isFunction', 'isBoolean', 'isString', 'isNumber']).forEach(function(method) {
+      obj[method] = function () {
+        _[method].call(obj, e);
+      };
+    });
+    
+    return obj;
+    
   };
+
+  
 
   _.range = function () {
     var n = [];
@@ -154,9 +160,11 @@
   _.isElement = function(el) {
     return el instanceof Element;
   };
-  _.isArray = function () {
-
+  _.isArray = Array.isArray || function(el) {
+    return toString.call(el) === '[object Array]';
   };
+
+  
 
   window._ = _;
 }());
