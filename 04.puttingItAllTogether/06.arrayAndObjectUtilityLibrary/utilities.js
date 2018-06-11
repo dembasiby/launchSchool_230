@@ -167,6 +167,9 @@
     var type = typeof el;
     return type === 'object' || type === 'function';
   };
+  _.isFunction = function(el) {
+    return typeof el === 'function';
+  };
 
   
 
