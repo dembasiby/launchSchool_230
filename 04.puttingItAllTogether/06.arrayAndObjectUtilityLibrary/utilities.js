@@ -170,7 +170,11 @@
   _.isFunction = function(el) {
     return typeof el === 'function';
   };
-
+  (['Boolean', 'String', 'Number']).forEach(function(func) {
+    _['is' + func] = function(el) {
+      return toString.call(el) === '[object ' + func + ']';
+    };
+  });
   
 
   window._ = _;
