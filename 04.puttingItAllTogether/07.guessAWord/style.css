@@ -1,0 +1,29 @@
+
+main {
+    width: 800px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+}
+#tree {
+    position: relative;
+    width: 678px;
+    height: 517px;
+    background: url("tree.png") 0 0 no-repeat;
+}
+#apples {
+    position: absolute;
+    z-index: 1;
+    width: 374px;
+    height: 322px;
+    left: 170px;
+    top: 20px;
+    background: url("apples.png") 0 0 no-repeat;
+}
+#apples.guess_1 { background-position: 0 -322px; }
+#apples.guess_2 { background-position: 0 -644px; }
+#apples.guess_3 { background-position: 0 -966px; }
+#apples.guess_4 { background-position: 0 -1288px; }
+#apples.guess_5 { background-position: 0 -1610px; }
+#apples.guess_6 { display: none; }
+
