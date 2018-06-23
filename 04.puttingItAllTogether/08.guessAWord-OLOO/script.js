@@ -15,23 +15,7 @@ var randomWord = (function () {
   };
 }());
 
-function Game() {
-  this.incorrect = 0;
-  this.letters_guessed = [];
-  this.correct_spaces = 0;
-  this.word = randomWord();
-
-  if (!this.word) {
-    this.displayMessage('Sorry, I\'ve run out of words!');
-    this.toggleReplayLink(false);
-    return this;
-  }
- 
-  this.word = this.word.split('');
-  this.init();
-}
-
-Game.prototype = {
+var Game = {
   guesses: 6,
   createBlanks: function () {
     var spaces = (new Array(this.word.length + 1)).join('<span></span>');
@@ -115,6 +99,19 @@ Game.prototype = {
     $(document).on('keypress.game', this.processGuess.bind(this));
   },
   init: function () {
+    this.incorrect = 0;
+    this.letters_guessed = [];
+    this.correct_spaces = 0;
+    this.word = randomWord();
+
+    if (!this.word) {
+      this.displayMessage('Sorry, I\'ve run out of words!');
+      this.toggleReplayLink(false);
+      return this;
+    }
+  
+    this.word = this.word.split('');
+
     this.resetBackground();
     this.bind();
     this.setClass();
@@ -134,10 +131,11 @@ function notALetter(code) {
 
 $replay.on('click', function (e) {
   e.preventDefault();
-  new Game();
+  Object.create(Game).init();
 });
 
-new Game();
+var game = Object.create(Game).init();
+game;
 
 
 
