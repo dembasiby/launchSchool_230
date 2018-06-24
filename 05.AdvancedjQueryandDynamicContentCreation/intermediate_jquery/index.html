@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Intermediate jQuery</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="stylesheets/examples.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="javascripts/examples.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Events</h1>
+      <h2>Click</h2>
+      <p><a class="simple clone" href="#">A simple click event</a></p>
+      <p id="clone"></p>
+
+      <div id="delegated">
+        <p><a href="#">A delegated click event</a></p>
+        <p id="delegate_clone"></p>
+      </div>
+
+      <p><a class="simple" id="namespaced" href="#">A link with multiple click events</a></p>
+
+      <h2>Event Object</h2>
+      <input id="text" type="text" />
+      <p id="which">Key pressed: <b></b></p>
+      <p><a id="trigger_k" href="#">Trigger "k" keyup</a></p>
+
+      <div id="check_mouse_button">Mouse button used: <b></b></div>
+
+      <div id="parent">
+        <h3>currentTarget and delegateTarget</h3>
+        <p>I'm currentTarget. The div#parent is the delegateTarget.</p>
+      </div>
+
+      <div id="index">
+        <p>Index 0</p>
+        <p>Index 1</p>
+        <article>Index 2</article>
+        <p>Index 3</p>
+      </div>
+
+      <h1>Dimensions</h1>
+      <div id="pinboard">
+        <p>Click me!</p>
+      </div>
+      <dl>
+        <dt>Position:</dt>
+        <dd id="position"></dd>
+        <dt>Offset:</dt>
+        <dd id="offset"></dd>
+      </dl>
+    </main>
+  </body>
+</html>
