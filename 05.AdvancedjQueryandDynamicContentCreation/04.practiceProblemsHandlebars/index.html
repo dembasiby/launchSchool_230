@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practice Problems: Handlebars</title>
+    <script src="handlebars-v4.0.11.js"></script>
+</head>
+<body>
+    
+    <script id="post" type="text/x-handlebars">
+        {{#each posts}}
+            <article>
+                <h1>{{title}}</h1>
+                <p><time>Posted on {{published}}</time></p>
+                {{{body}}}
+                <footer>
+                    {{> tags }}
+                </footer>
+            </article>
+        {{/each}}
+    </script>
+
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

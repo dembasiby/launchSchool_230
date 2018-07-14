@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introducing Handlebars 2</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="quoteData"></div>
+    <script id="quote-template" type="text/x-handlebars-template">
+        <h3>Favorite {{name}} Quotes</h3>
+        <ol>
+            {{#each quotes}}
+            <li>{{quote}}
+            {{/each}}
+        </ol> 
+
+        {{{yogiBio}}}<br/><br>
+
+        {{makeLink "Yogi Berra Museum" "http://yogiberramuseum.org"}} <br>
+
+        {{changeColor "Make my text red" color="brown"}} <br>
+        <p></p>
+        
+         
+    </script>
+
+    <script src="/scripts/handlebars-v4.0.11.js"></script>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

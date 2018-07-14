@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Beginner Guide to Handlebars</title>
+</head>
+<body>
+    <script id="handlebars-demo" type="text/x-handlebars-template">
+        <div>
+            {{#each countries}}
+              {{@index}} : {{this}}<br>
+            {{/each}}
+
+            <br>
+
+            {{#if countries}}
+              The countries are present.<br>
+            {{else}}
+              The countries are not present.<br>
+            {{/if}}
+            
+            <br>
+            <!-- This article is available in {{website.name}}.<br> -->
+
+            {{#each names}}
+                Name: {{firstName}} {{lastName}}. Occupation: Leading {{../occupation}}.<br>
+            {{/each}}
+            <!-- My name is {{name}}. I am a {{occupation}}. <br> -->
+            <!-- I am learning {{language}} -->
+            <!-- I am learning {{language}}. It is {{!--adjective--}} -->
+
+            <br>
+
+            {{#each students}}
+                {{name}} has {{studyStatus passingYear}}.<br>
+            {{/each}}
+
+            <br>
+
+            {{#studyStatus2 students}}
+                {{name}} has {{passingYear}}<br>
+            {{/studyStatus2}}
+
+            <br>
+
+            {{>partialTemplate website="Sitepoint"}}<br>
+            {{>partialTemplate website="www.sitepoint.com"}}<br>
+        </div>
+    </script>
+    
+
+    <script src="/scripts/jquery.js"></script>
+    <script src="/scripts/handlebars-v4.0.11.js"></script>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

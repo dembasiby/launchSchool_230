@@ -1,5 +1,6 @@
-$((function() {
-  var inventory = {
+var inventory;
+(function() {
+  inventory = {
     lastId: 0,
     collection: [],
     setDate: function() {
@@ -7,8 +8,9 @@ $((function() {
       $('#order_date').append(date);
     },
     cacheTemplate: function () {
-      var $iTmpl = $('#inventory_item').remove();
-      this.template = $iTmpl.html();
+      var $iTmpl = $('#inventory_item').html();
+      this.template = Handlebars.compile($iTmpl);
+      return this.template;
     },
     add: function() {
       this.lastId += 1;
@@ -37,7 +39,7 @@ $((function() {
     newItem: function(e) {
       e.preventDefault();
       var item = this.add();
-      var $item = $(this.template.replace(/ID/g, item.id));
+      var $item = this.template(item);
       $('#inventory').append($item);
     },
     findParent: function(e) {
@@ -73,6 +75,6 @@ $((function() {
       this.bindEvents();
     },
   }
+}());
 
-  return inventory.init.bind(inventory)
-}()));
+$(inventory.init.bind(inventory));
